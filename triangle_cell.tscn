@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bbcy4fgsptiv4"]
+
+[ext_resource type="Script" uid="uid://o6emcdfkrdm5" path="res://triangle_cell.gd" id="1_3ffc4"]
+
+[node name="TriangleCell" type="Polygon2D" unique_id=655716656]
+antialiased = true
+polygon = PackedVector2Array(-50, 43.253, 0, -43.253, 50, 43.253)
+uv = PackedVector2Array(0, 72.112, 50, 0, 100, 72.112)
+script = ExtResource("1_3ffc4")

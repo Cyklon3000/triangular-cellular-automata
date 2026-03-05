@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://djcps812amwk1"]
+
+[ext_resource type="Script" uid="uid://cvda5hh16gcc1" path="res://grid_controls.gd" id="1_x51ra"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kilyp"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w63eh"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v2iy"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5msmy"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkinb"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_x51ra"]
+default_font_size = 40
+Button/styles/disabled = SubResource("StyleBoxFlat_kilyp")
+Button/styles/focus = SubResource("StyleBoxFlat_w63eh")
+Button/styles/hover = SubResource("StyleBoxFlat_6v2iy")
+Button/styles/normal = SubResource("StyleBoxFlat_5msmy")
+Button/styles/pressed = SubResource("StyleBoxFlat_tkinb")
+
+[node name="MarginContainer" type="MarginContainer" unique_id=891908183]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_x51ra")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_x51ra")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2090298994]
+layout_mode = 2
+mouse_filter = 0
+theme_override_constants/separation = 10
+
+[node name="NextButton" type="Button" parent="HBoxContainer" unique_id=388196249]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next Generation"
+
+[node name="RandomizeButton" type="Button" parent="HBoxContainer" unique_id=779891767]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Randomize"
+
+[node name="ClearButton" type="Button" parent="HBoxContainer" unique_id=748225973]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Clear
+"
+
+[node name="ToggleDebugButton" type="Button" parent="HBoxContainer" unique_id=1713654929]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Debug
+"
+
+[connection signal="pressed" from="HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/RandomizeButton" to="." method="_on_randomize_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/RandomizeButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ToggleDebugButton" to="." method="_on_toggle_debug_button_pressed"]

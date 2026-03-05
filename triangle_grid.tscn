@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bowqh0wew5aoh"]
+
+[ext_resource type="Script" uid="uid://cevaf3pujmoiu" path="res://grid_manager.gd" id="1_e5j1r"]
+[ext_resource type="PackedScene" uid="uid://bbcy4fgsptiv4" path="res://triangle_cell.tscn" id="2_e5j1r"]
+
+[node name="GridManager" type="Node2D" unique_id=858299332]
+script = ExtResource("1_e5j1r")
+
+[node name="TriangleCell" parent="." unique_id=655716656 instance=ExtResource("2_e5j1r")]
